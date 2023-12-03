@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .topnav{
+        background: #000;
+        display: flex;
+    }
+    .topnav img{
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+    .nav{
+        display: flex;
+        gap: 100px;
+        padding: 30px;
+    }
+    .nav a{
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+    }
+
+
+    .mySlides {
+        display: none;
+    }
+    img {
+        vertical-align: middle;
+        height: 550px;
+        margin-top: 30px;
+        border-radius: 20px;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+        color: #f2f2f2;
+        font-size: 20px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .food-box{
+        width: 200px;
+    }
+    .food-box h2{
+        text-align: center;
+        padding: 10px;
+    }
+    .food-box ul li{
+        text-align: center;
+        list-style: inherit;
+        font-weight: 800;
+        line-height: 30px;
+    }
+    .food-box a{
+        color: white;
+        text-decoration: none;
+    }
+    .food-box a:hover{
+        text-shadow: 2px 2px red;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+        background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4;
+        } 
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+        .prev, .next,.text {font-size: 11px}
+    }
+</style>
+<body>
+    <div class="topnav">
+        <img src="../foodieFeast.png" alt="image" style="margin:0;">
+        <div class="nav">
+            <a href="../homepage2.html">Home</a>
+            <a href="menu.html" style="text-decoration: underline;">Menu</a>
+            <a href="../Order/order.html">Order</a>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+            <img src="./menuImages/carosel1.avif" style="width:100%">
+            <div class="text">
+
+                <div class="food-box">
+                    <a href="../food-item-pages/northIndian.html"><h2>North Indian</h2></a>
+                    <ul>
+                        <li>Paneer Butter Masala</li>
+                        <li>Palak Paneer</li>
+                        <li>Dal Makhani</li>
+                        <li>Chhole Bhature</li>
+                        <li>Rajma Chawal</li>
+                        <li>Kadahi Paneer</li>
+                        <li>Malai Kofta</li>
+                        <li>Kadahi Mushroom</li>
+                    </ul>
+                </div>
+
+                <div class="food-box">
+                    <a href="../food-item-pages/southIndian.html"><h2>South Indian</h2></a>
+                    <ul>
+                        <li>Dosa</li>
+                        <li>Idli</li>
+                        <li>Pongal</li>
+                        <li>Malabar Parota</li>
+                        <li>Coconut Rice</li>
+                        <li>Poriyal/Thoran</li>
+                        <li>Patrode</li>
+                        <li>Palkatti Chettinadu</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 5</div>
+            <img src="./menuImages/carosel2.jpeg" style="width:100%">
+            <div class="text" style="justify-content: right;">
+
+                <div class="food-box">
+                    <a href="../food-item-pages/sweets.html"><h2>Sweets</h2></a>
+                    <ul>
+                        <li>Kaju Katli</li>
+                        <li>Rabri Jalebi</li>
+                        <li>Rasgulla</li>
+                        <li>Gulab Jamun</li>
+                        <li>Rasmalai</li>
+                        <li>Malai Ghevar</li>
+                        <li>MalPua</li>
+                        <li>Chocolate Burfi</li>
+                    </ul>
+                </div>
+
+                <div class="food-box">
+                    <a href="../food-item-pages/breakfast.html"><h2>Breakfast</h2></a>
+                    <ul>
+                        <li>Bread Pakora</li>
+                        <li>Poha</li>
+                        <li>Moong Dal Cheela</li>
+                        <li>Masala Omlette</li>
+                        <li>Dal Kachori</li>
+                        <li>Aloo Ka Paratha</li>
+                        <li>Egg Bhurji</li>
+                        <li>Pab Bhaji</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 5</div>
+            <img src="./menuImages/carosel3.avif" style="width:100%">
+            <div class="text" style="justify-content: left;">
+
+                <div class="food-box">
+                    <a href="../food-item-pages/drinks.html"><h2>Drinks</h2></a>
+                    <ul>
+                        <li>Blackberry-Lime Porch Punch</li>
+                        <li>Rosemary-and-Ginger Mule</li>
+                        <li>Peach Lemonade</li>
+                        <li>Non-Alcoholic Margarita Mocktail</li>
+                        <li>Strawberry Spritzers</li>
+                        <li>Ginger-Orange Mocktails</li>
+                        <li>Berry Juniper Fizz</li>
+                        <li>Roy Rogers Drink</li>
+                    </ul>
+                </div>
+
+                <div class="food-box">
+                    <a href="../food-item-pages/pasta.html"><h2>Pasta</h2></a>
+                    <ul>
+                        <li>White Sauce Pasta</li>
+                        <li>Red Sauce Pasta</li>
+                        <li>Creamy Tandoori Pasta</li>
+                        <li>Bow Tie Pasta (Farfalle)</li>
+                        <li>Mushroom Pasta</li>
+                        <li>Chicken Pasta</li>
+                        <li>Beetroot Pasta</li>
+                        <li>Alfredo Pasta</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 5</div>
+            <img src="./menuImages/carosel4.avif" style="width:100%">
+            <div class="text">
+
+                <div class="food-box">
+                    <a href="../food-item-pages/burger.html"><h2>Burger</h2></a>
+                    <ul>
+                        <li>Steamed CheeseBurger</li>
+                        <li>Slaw Burger</li>
+                        <li>Chinese HamBurger</li>
+                        <li>Turkey Burger</li>
+                        <li>Chicken Burger</li>
+                        <li>Pizza Burger</li>
+                        <li>Quesadilla Burger</li>
+                        <li>Green Chile Cheeseburger</li>
+                    </ul>
+                </div>
+
+                <div class="food-box">
+                    <a href="../food-item-pages/pastries.html"><h2>Pastries</h2></a>
+                    <ul style="font-size: 18px;">
+                        <li>BlackBerry Braided Puff Pastry</li>
+                        <li>Strawberry Mille-Feuille-Napoleon Pastry</li>
+                        <li>Maple Mille Feuille</li>
+                        <li>Easy Apple Strudel With Filo Pastry</li>
+                        <li>Danish Pastry Pinwhells</li>
+                        <li>Chocolate Rugelach</li>
+                        <li>Cream Puffs</li>
+                        <li>Honey Pistachio Baklava</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">5 / 5</div>
+            <img src="./menuImages/carosel5.jpg" style="width:100%">
+            <div class="text">
+
+                <div class="food-box">
+                    <a href="../food-item-pages/pizza.html"><h2>Pizza</h2></a>
+                    <ul style="font-size: 18px;">
+                        <li>Indian Vegetable and Chickpea Pizza</li>
+                        <li>Tandoori Mushroom Pizza</li>
+                        <li>Desi Pizza</li>
+                        <li>Paneer Naan Pizza</li>
+                        <li>Vegan Indian Style Pizza</li>
+                        <li>Mushroom, Feta and Cilantro Pesto Naan Pizza</li>
+                        <li>Italian Sausage Pizza</li>
+                        <li>Indian Bread Pizza</li>
+                    </ul>
+                </div>
+
+                <div class="food-box">
+                    <a href="../food-item-pages/chinese.html"><h2>Chinese</h2></a>
+                    <ul>
+                        <li>Chilli Chicken</li>
+                        <li>Chicken Manchurian</li>
+                        <li>Manchow Soup</li>
+                        <li>Chowmin</li>
+                        <li>Spring Rolls</li>
+                        <li>Fried Rice</li>
+                        <li>Momos</li>
+                        <li>Honey Chili Potato</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+        <span class="dot" onclick="currentSlide(5)"></span> 
+    </div>
+</body>
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    }
+</script>
+</html>
