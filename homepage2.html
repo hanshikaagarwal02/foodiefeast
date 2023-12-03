@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Vina Sans' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+  
+      .carousel-inner img {
+        width: 100%;
+        height: 500px;
+      background-size: cover;
+      }
+      .carousel-item{
+        position: relative;
+      }
+      .cap{
+        position: absolute;
+        bottom: 50%;
+        left: 5%;
+        z-index: 20;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0,0,0,.6);
+        font-family: 'Vina Sans';
+      }
+      /* .navbar{
+        border: 2px solid red;
+        } */
+        .links{
+            /* border: 2px solid green; */
+            padding: 20px;
+        }
+        .links a{
+            padding: 20px;
+            font-size: 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: bolder;
+        }
+        a.active{
+            text-decoration: underline;
+        }
+        .links a:hover{
+            text-shadow: 1px 1px red;
+        } 
+      .card{
+        transition: .3s;
+        height: 200px;
+        width: 250px;
+        margin: 10px auto;
+        border: 1px solid lightgray;
+        padding: 10px;
+        border-radius: 14px;
+        color: white;
+        background-color: black;
+        text-decoration: none;
+    }
+    .card-img{
+        width: 100%;
+        height: 150px;
+        border-radius: 14px;
+        
+    }
+    .card:hover{
+        width: 320px;
+        transform: rotate(3deg);
+        border: 1px solid white;
+        box-shadow: 4px 6px 8px 4px #eee;
+    }
+    .flexbox{
+        display: flex;
+        gap: 10px;
+        justify-content: left;
+        flex-wrap: wrap;
+        margin-top: 0px;
+        background-color: black;
+    }
+    .flexbox a{
+        color: white;
+        text-decoration: none;
+    }
+    .flexbox a:hover{
+        font-weight: bolder;
+    }
+    .footer{
+        width: 100%;
+        height: 500px;
+        background-image: url("./homepage_Images/foot.jpg");
+        background-size: cover;
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer-box{
+      margin: 20px;
+      height: 300px;
+    }
+    #footer-box-one{
+            width: 400px;
+          }
+          
+          #footer-box-two{
+            width: 400px;
+        }
+
+        .footer-h3{
+            text-align: center;
+            color: white;
+        }
+
+        input[type="text"],textarea,input[type="number"]{
+            width: 95%;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 10px;
+            margin: 2px;
+        }
+
+        .footer-btn{
+            display: block;
+            width: 30%;
+            padding: 5px;
+            background-color: #554c4c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 1px 1px 2px 2px;
+            margin-left: 35%;
+            border-radius: 10px;
+        }
+        .footer-btn:hover{
+            background-color: #eadede;
+            color: black;
+        }
+
+        .footer-social-media{
+            display: flex;
+            padding-left: 30px;
+            gap: 30px;
+        }
+
+        .footer-media img{
+            height: 50px;
+            padding: 5px;
+            padding: 10px;
+        }
+
+        .footer-para{
+            text-align: center;
+            color: white;
+            padding: 10px;
+        }
+
+        select{
+            width: 250px;
+            border-radius: 20px;
+            padding: 10px;
+            margin: 20px;
+        }
+        input[type="submit"]{
+            width: 80px;
+            border-radius: 20px;
+            padding: 10px;
+        }
+  </style>
+</head>
+<body style="background-color: black;">
+    <div class="navbar">
+        <img src="foodieFeast.png" style="height: 100px; border-radius: 50%;" alt="">
+        <div class="links">
+            <a href="#" class="active">Home</a>
+            <a href="./Menu/menu.html">Menu</a>
+            <a href="./Order/order.html">Order</a>
+        </div>
+        <div class="searchbar">
+            <form>
+                <label for="myDropdown">:</label>
+                <select id="myDropdown" name="myDropdown">
+                    <option value="./food-item-pages/northIndian.html" class="optionarea">North Indian</option>
+                    <option value="./food-item-pages/southIndian.html">South Indian</option>
+                    <option value="./food-item-pages/sweets.html">Sweets</option>
+                    <option value="./food-item-pages/drinks.html">Drinks</option>
+                    <option value="./food-item-pages/breakfast.html">Breakfast</option>
+                    <option value="./food-item-pages/pasta.html">Pasta</option>
+                    <option value="./food-item-pages/pizza.html">Pizza</option>
+                    <option value="./food-item-pages/burger.html">Burger</option>
+                    <option value="./food-item-pages/chinese.html">Chinese</option>
+                    <option value="./food-item-pages/pastries.html">Pastries</option>
+                  </select>
+            </form>
+        </div>
+    </div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./homepage_Images/car1.jpg" alt="cupcake" width="1100" height="500">
+       <div class="cap">
+        <h3>Delicious Pastries & Cupcakes by</h3>
+        <h1>THEOBROMA</h1>
+       </div>
+      
+    </div>
+    <div class="carousel-item">
+      <img src="./homepage_Images/car2.jpg" alt="pizza" width="1100" height="500">
+      <div class="cap">
+        <h3>Steaming Pan Pizzas</h3>
+        <h1>La Pinos</h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./homepage_Images/car3.jpg" alt="burger" width="1100" height="500">
+      <div class="cap">
+        <h3>Spicy and Cheesy Burgers by</h3>
+        <h1>The BURGER COMPANY</h1>
+      </div>
+    </div>
+    <div class="carousel-item">
+        <img src="./homepage_Images/car4.jpg" alt="wrap" width="1100" height="500">
+        <div class="cap">
+          <h3>Filled with spicy Chicken and <br>
+             your favorite sauces WRAPS by</h3>
+          <h1>MC Donalds</h1>
+        </div>
+      </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<h1 style="color: white;">Inspiration for your first order!</h1>
+
+<div class="flexbox">
+  <div class="card">
+      <img src="./food-item-pages/foodItemImages/north6.jpg" alt="food" class="card-img">
+      <div class="flex">
+        <a href="./food-item-pages/northIndian.html">
+            <h4>NORTH INDIAN</h4>
+        </a>
+      </div>
+    </div>
+<div class="card">
+    <img src="./food-item-pages/foodItemImages/south1.jpg" alt="food" class="card-img">
+    <div class="flex">
+        <a href="./food-item-pages/southIndian.html">
+            <h4>SOUTH INDIAN</h4>
+        </a>
+    </div>
+</div>
+<div class="card">
+    <img src="./food-item-pages/foodItemImages/sweet2.jpg" class="card-img" alt="food">
+    <div class="flex">
+        <a href="./food-item-pages/sweets.html">
+            <h4>SWEETS</h4>
+        </a>
+    </div>
+</div>
+<div class="card">
+    <img src="./homepage_Images/food6.jpg" class="card-img" alt="food">
+    <div class="flex">
+        <a href="./food-item-pages/breakfast.html">   
+            <h4>BREAKFAST</h4>
+        </a>
+    </div>
+</div>
+<div class="card">
+    <img src="./homepage_Images/food7.jpg" alt="food" class="card-img">
+    <div class="flex">
+        <a href="./food-item-pages/drinks.html">
+            <h4>DRINKS</h4>
+        </a>
+    </div>
+</div>
+</div>
+<h1 style="background-color: black; color: white;">What are you waiting for, Order now!</h1>
+<div class="flexbox">
+  <div class="card">
+      <img src="./homepage_Images/food3.jpg" alt="food" class="card-img">
+      <div class="flex">
+        <a href="./food-item-pages/pasta.html">
+            <h4>PASTA</h4>
+        </a>
+      </div>
+    </div>
+<div class="card">
+    <img src="./homepage_Images/food4.jpg" alt="food" class="card-img">
+    <div class="flex">
+        <a href="./food-item-pages/burger.html">
+
+            <h4>BURGERS</h4>
+        </a>
+    </div>
+</div>
+<div class="card">
+    <img src="./homepage_Images/food5.jpg" class="card-img" alt="food">
+    <div class="flex">
+        <a href="./food-item-pages/pastries.html">
+
+            <h4>DELICIOUS PASTRIES</h4>
+        </a>
+    </div>
+</div>
+<div class="card">
+    <img src="./homepage_Images/food6.jpg" class="card-img" alt="food">
+    <div class="flex">
+        <a href="./food-item-pages/pizza.html">
+            
+            <h4>PIZZAS</h4>
+        </a>
+    </div>
+</div>
+<div class="card">
+    <img src="./homepage_Images/food7.jpg" alt="food" class="card-img">
+    <div class="flex">
+        <a href="./food-item-pages/chinese.html">
+            
+            <h4>CHINESE FOOD</h4>
+        </a>
+    </div>
+</div>
+</div>
+
+<footer>
+  <div class="footer">
+
+    <div class="footer-box" id="footer-box-one">
+
+        <form class="contact-form" id="contactform">
+
+            <h3 class="footer-h3"><u>Contact Us</u></h3>
+
+            <div class="footer-form-group">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Name" onkeypress="return onlyAlphabets(event,this);" required>
+            </div>
+
+            <div class="footer-form-group">
+                <label for="phone"></label>
+                <input type="number" name="phone" id="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="footer-form-group">
+                <label for="message"></label>
+                <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+            </div>
+
+            <button class="footer-btn" type="submit">Send</button>            
+
+        </form>
+    </div>
+
+
+    <div class="footer-box" id="footer-box-two">
+
+        <div class="footer-icons">
+
+            <h3 class="footer-h3"><u>Follow</u></h3>
+
+            <div class="footer-social-media">
+
+                <div class="footer-media">
+                    <a href="https://www.facebook.com/"><img class="footer-img" src="./homepage_Images/facebook.png" alt="image"></a>
+                </div>
+
+                <div class="footer-media">
+                    <a href="https://www.instagram.com/"><img class="footer-img" src="./homepage_Images/instagram.png" alt="image"></a>
+                </div>
+
+                <div class="footer-media">
+                    <a href="https://www.youtube.com/"><img class="footer-img" src="./homepage_Images/youtube.png" alt="image"></a>
+                </div>
+
+                <div class="footer-media">
+                    <a href="https://www.twitter.com/"><img class="footer-img" src="./homepage_Images/twitter.png" alt="image"></a>
+                </div>
+
+            </div>
+
+            <h3 class="footer-h3"><u>Address</u></h3>
+
+            <p class="footer-para">
+                GLA University <br>
+                281406 , Mathura <br>
+                Uttar Pradesh 
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</footer>
+</body>
+<script>
+
+let contactForm = document.getElementById("contactform");
+
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    let username = document.getElementById("name");
+    let contact_number = document.getElementById("phone");
+    let message = document.getElementById("message");
+
+    console.log(` Username - ${username.value} , Message : ${message.value} , Contact_Number : ${contact_number.value}`
+        );
+
+    username.value = "";
+    message.value ="";
+    contact_number.value="";
+    });
+
+
+    document.getElementById('myDropdown').addEventListener('change', function() {
+      var selectedOption = this.options[this.selectedIndex];
+      if (selectedOption.value) {
+        window.location.href = selectedOption.value;
+      }
+    });
+
+    function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else{ 
+                    return true; 
+                }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 32)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+</script>
+</html>
