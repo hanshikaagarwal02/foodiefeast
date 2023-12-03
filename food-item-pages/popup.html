@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    figure{
+        width:360px;
+        padding: 10px;
+        border:1px solid black ;
+        box-shadow:2px 2px 4px 4px black;;
+        transition:0.5s ;
+        background-color: rgb(127, 239, 90);
+    }
+    figure img{
+        width:90%;
+    }
+    #container{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        padding-top: 200px;
+    }
+    figure:hover{
+        transform:scale(1.05);
+    }
+    p{
+        text-align: center;
+        font-size: 50px;
+        color: white;
+        font-weight: bolder;
+    }
+    .backbutton{
+        height: 40px;
+        border-radius: 10px;
+        font-size: 15px;
+        margin-left: 45%;
+    }
+    .backbutton:hover{
+        background: black;
+        color: white;
+    }
+
+</style>
+<body>
+    <section id="container">
+        <figure>
+           
+            <figcaption>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" width="" height="57" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                    <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0"/>
+                    <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                  </svg>
+               <br>
+                <p>Your order is successful!!</p>
+                
+            </figcaption>
+        </figure>
+        </section>
+        <div class="popbtn">
+            <a href="../Menu/menu.html"><button class="backbutton">Back To Menu Page</button></a>
+        </div>
+</body>
+</html>

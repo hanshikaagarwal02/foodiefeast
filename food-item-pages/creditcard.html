@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *:before, *:after{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: istok-web, sans-serif;
+}
+
+.container{
+  background: #FFF;
+  padding: 2em;
+  /* padding-left: 200px; */
+  
+  width: 33%;
+  min-width: 25em;
+  margin-left: 35%;
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  margin-right: 1em;
+  background-color: black;
+}
+
+ul{
+  list-style-type: none;
+}
+
+h3, h4{
+  color: #f2f1f0;
+}
+h3{
+  text-transform: uppercase;
+  font-size: 1.4em;
+  line-height: 2em;
+}
+h4{
+  line-height: 3.5em;
+}
+
+li{
+  margin-bottom: .8em;
+  zoom: 1;
+}
+li:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input{
+  border: 1px solid #CC3300;
+  padding: .7em;
+  height: 3em;
+  width: 100%;
+}
+[type="checkbox"]{
+  width: auto;
+height: 100%;  
+}
+label{
+  float: left;
+  width: 90%;
+  font-size: .9em;
+  font-weight: bold;
+  color: #444;
+}
+
+select{
+  font-size: 0.6em;
+  width: 100%;
+  height: 4.1em;
+}
+
+.phoneBox{
+  width: 25%;
+  margin-right: 4.1666666666%;
+  margin-left: 4.1666666666%;
+  float: left;
+  position:relative;
+  padding: .8em 0;
+}
+.phoneBox:after{
+  content: "-";
+  position: absolute;
+  z-index: 1000;
+  right: -17%;
+  top: 33%;
+}
+.phoneBox:last-child:after{
+  content: "";
+  display: none;
+}
+.btn{
+  font-size: 1em;
+  font-weight: bold;
+  background: #CC3300;
+  border-radius: .25em;
+  color: #fff;
+  width: 50%;
+  min-width: 12em;
+  max-width: 16em;
+  margin: 1em auto;
+  display: block;
+}
+.btn a{
+  text-decoration: none;
+  color: white;
+}
+
+
+button:hover { 
+    background-color: rgb(113, 140, 139); 
+    color: white; 
+    /* transition-delay: 0.4s; */
+}
+
+  
+button { 
+    background-color: rgb(0, 0, 0); 
+    color: white; 
+    border-radius: 5px; 
+    height: 36px; 
+    width: 77px; 
+    border: none; 
+    transition-duration: 0.5s; 
+    font-size: 17px; 
+} 
+
+.paymentInformation a{
+  text-decoration: none;
+}
+.paymentInformation a:hover{
+  color: #CC3300;
+}
+.subscriberAgreement a{
+  color: #CC3300;
+}
+
+/* -- the grid -- */
+[class*="col-span"]{
+  float: left;
+  padding: 0 .4em;   
+}
+
+.col-span-33{
+  width: 33%;
+}
+.col-span-50{
+  width: 50%;
+}
+.col-span-66{
+  width: 66%;
+}
+.col-span-100{
+  width: 100%;
+}
+
+
+
+/* -- Helper Classes -- */
+.thickGrayDblBorder{ /*Lame Name */
+  border: 8px solid #ccc;
+  outline: 1px solid #999;  
+}
+
+.smallPrint{ /* another lame name */
+  font-size: .6em;
+  color: #666;
+}
+.smallPrint p{
+  margin-bottom: 1.5em;
+}
+
+.grayBg{
+  background: #ccc;
+}
+
+.fauxTable {
+  display: table;
+  padding: .8em 1em .5em  1em;
+}
+
+.fauxTableCell.vertMiddle{
+   display: table-cell;
+   vertical-align: middle;
+}
+.fauxTableCell.horMiddle{
+  text-align: center;
+}
+
+.overRide-floatRight{
+  float: right !important;
+}
+
+.overRide-width85{
+  width: 85% !important;
+  
+}
+.overRide-width10{
+  width: 15% !important;
+}
+.overRide-noHeight{
+  height: auto !important;
+}
+
+.centerHor{
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn{
+  height: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+
+    </style>
+</head>
+<body>
+  <form action="#"name="myForm"  onsubmit="return validateForm()" method="post">
+    <div class="container">
+
+        <section class="paymentInformation">
+          <h3>Payment Information</h3>
+          <ul>
+            
+            <li>
+              <div class="col-span-100">
+                <input type="text" id="nameOnCard" name="nameOnCard"onkeypress="return onlyAlphabets(event,this);" placeholder="Name on Card" required>
+              </div>
+            </li>
+            <li>
+              <div class="col-span-100">
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="Credit Card Number"maxlength="16" required>
+              </div>
+            </li>
+            
+            <li>
+              <div class="col-span-50">
+                <select class="thickGrayDblBorder" id="expMonth" name="expMonth" required>
+                    
+                  <option value="jan">Jan</option>
+                  <option value="feb">Feb</option>
+                  <option value="march">March</option>
+                  <option value="june">April</option>
+                  <option value="-1">May</option>
+                  <option value="-1">June</option>
+                  <option value="-1">July</option>
+                  <option value="-1">August</option>
+                  <option value="-1">September</option>
+                  <option value="-1">October</option>
+                  <option value="-1">November</option>
+                  <option value="-1">December</option>
+
+                  
+                </select>
+              </div>
+              <div class="col-span-50">
+                  <select class="thickGrayDblBorder"  id="expYear" name="expYear" required>
+                    <!-- <option value="-1">Year</option> -->
+                    <option value="-1">2023</option>
+                    <option value="-1">2024</option>
+                    <option value="-1">2025</option>
+                    <option value="-1">2026</option>
+                    <option value="-1">2027</option>
+                    <option value="-1">2028</option>
+                    <option value="-1">2029</option>
+                    <option value="-1">2030</option>
+                  </select>
+              </div>
+            </li>
+            <li>
+              <div class="col-span-50">
+                <input type="text" id="securityCode" name="securityCode" placeholder="Security Code" maxlength="3">
+              </div>
+              <div class="col-span-50">
+                  <a href="#" class="smallPrint whatIsThis">What is this?</a>
+                  <img src="https://s.cdpn.io/6209/cc_Icon.png" />
+              </div>
+            </li>
+            
+          </ul>
+        </section>
+        
+        <section class="deliveryAddress">
+          <h3>Delivery Address</h3>
+          <ul>
+            <li>
+              <div class="col-span-33">
+                <input type="text" id="shipHouseNumber" name="shipHouseNumber" placeholder="House No" required /> 
+              </div>
+              <div class="col-span-66">
+                <input type="text" id="shipStreetName" name="shipStreetName" placeholder="Street Name" required />
+              </div>
+            </li>
+            
+            <li>
+              <div class="col-span-100">
+               <input type="text" id="shipAddress2" name="shipAddress2" placeholder="Apt / Suite / Floor  (if applicable)" />
+              </div>
+              </li>
+            <li>
+              <div class="col-span-100">
+              <input type="text" id="shipCity" name="shipCity" placeholder="City" onkeypress="return onlyAlphabets(event,this);"required>
+              </div>
+              </li>
+            <li>
+              <div class="col-span-50">
+              <select class="thickGrayDblBorder" id="shipState" name="shipState" required>
+                <!-- <option value="-1">State</option> -->
+                <option value="AN">Andaman and Nicobar Islands</option>
+                <option value="AP">Andhra Pradesh</option>
+                <option value="AR">Arunachal Pradesh</option>
+                <option value="AS">Assam</option>
+                <option value="BR">Bihar</option>
+                <option value="CH">Chandigarh</option>
+                <option value="CT">Chhattisgarh</option>
+                <option value="DN">Dadra and Nagar Haveli</option>
+                <option value="DD">Daman and Diu</option>
+                <option value="DL">Delhi</option>
+                <option value="GA">Goa</option>
+                <option value="GJ">Gujarat</option>
+                <option value="HR">Haryana</option>
+                <option value="HP">Himachal Pradesh</option>
+                <option value="JK">Jammu and Kashmir</option>
+                <option value="JH">Jharkhand</option>
+                <option value="KA">Karnataka</option>
+                <option value="KL">Kerala</option>
+                <option value="LA">Ladakh</option>
+                <option value="LD">Lakshadweep</option>
+                <option value="MP">Madhya Pradesh</option>
+                <option value="MH">Maharashtra</option>
+                <option value="MN">Manipur</option>
+                <option value="ML">Meghalaya</option>
+                <option value="MZ">Mizoram</option>
+                <option value="NL">Nagaland</option>
+                <option value="OR">Odisha</option>
+                <option value="PY">Puducherry</option>
+                <option value="PB">Punjab</option>
+                <option value="RJ">Rajasthan</option>
+                <option value="SK">Sikkim</option>
+                <option value="TN">Tamil Nadu</option>
+                <option value="TG">Telangana</option>
+                <option value="TR">Tripura</option>
+                <option value="UP">Uttar Pradesh</option>
+                <option value="UT">Uttarakhand</option>
+                <option value="WB">West Bengal</option>
+                
+              </select>
+              </div>
+              <div class="col-span-50">
+              <input type="text" id="shipZip" name="shipZip" placeholder="Zipcode" required>
+              </div>
+              </li>
+            
+              
+            
+              
+          </ul>
+        </section>
+        <br>
+            
+
+              <br>
+               <div class="col-span-100 grayBg">
+                
+                
+                  <div class="phoneBox" style="width: 300px;"><input type="type" step="1" id="acctPhoneAreaCode" name="acctAreaCode" placeholder="Phone Number" maxlength="10" required /></div> 
+                
+                  
+                
+              </div>
+              </li>
+            
+              
+          </ul>
+        </section>
+        
+      </form>
+        
+        
+              
+               <form  onsubmit="return validateForm()" method="post"name="myForm" > 
+                <a href="popup.html">
+                  <input type="Submit" class="btn">
+                  
+                </a>
+               </form>  
+                
+                
+               
+              </div>
+             
+              </li>
+
+
+        <script>
+            
+
+              function validateForm() {
+                let x = document.forms["myForm"]["nameOnCard"].value;
+              if (x == "") {
+            alert("Name must be filled out");
+              return false;
+                }
+                let y=document.forms["myForm"]["cardNumber"].value;
+                if(y==""){
+                  alert("credit card number must be filled out");
+                  return false;
+                }
+                let z=document.forms["myForm"]["securityCode"].value;
+                if(z==""){
+                  alert("Security code must be filled out");
+                  return false;
+                }
+
+                let a=document.forms["myForm"]["shipHouseNumber"].value;
+                if(a==""){
+                  alert("house no. must be filled out");
+                  return false;
+                }
+                let b=document.forms["myForm"]["shipStreetName"].value;
+                if(b==""){
+                  alert("Street name must be filled out");
+                  return false;
+                }
+                let c=document.forms["myForm"]["shipCity"].value;
+                if(c==""){
+                  alert("City must be filled out");
+                  return false;
+                }
+                let d=document.forms["myForm"]["shipZip"].value;
+                if(d==""){
+                  alert("Zipcode must be filled out");
+                  return false;
+                }
+                
+                let e=document.forms["myForm"]["acctAreaCode"].value;
+                if(e==""){
+                  alert("phone number must be filled out");
+                  return false;
+                }
+              
+                }
+                function onlyAlphabets(e, t) {
+                try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else{ 
+                    return true; 
+                }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 32)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+                
+            }
+        }
+                
+
+             
+              
+
+  
+
+        </script>
+            
+</body>
+</html>
