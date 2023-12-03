@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaints</title>
+    <style>
+        .container{
+            background: url('./orderImages/complaints_bg.avif');
+            width: 620px;
+            height: 750px;
+            padding: 10px 0px 10px 90px;
+            margin: auto;
+        }
+        .complaint-form{
+            width: 500px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 5px solid ;
+            padding-right: 10px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+        h2{
+            text-align: center;
+        }
+        .form-group{
+            margin-bottom: 20px;
+        }
+        label{
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        input[type="text"] , input[type="email"] , textarea , input[type="date"] , input[type="number"],input[type="tel"]{
+            width: 95%;
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 15px;
+            font-size: 10px;
+        }
+        .buttons{
+            padding: 10px 10px 10px 50px;
+        }
+        .complaint-btn{
+            padding: 7px;
+            border-radius: 10px;
+            margin: 0px 20px;
+            cursor: pointer;
+            background-color: rgb(218, 210, 210);
+            font-size: 15px;
+            width: 150px;
+        }
+        .complaint-btn:hover{
+            background-color: black;
+            color: white;
+            box-shadow: 2px 2px 4px 4px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="complaint-form" id="complaintform">
+            <h2><u>Customer Complaint Form</u></h2>
+            <div class="form-group">
+                <label for="date-of-complaint">Date Of Complaint :</label>
+                <input type="date" name="date-of-complaint" id="date-of-complaint">
+            </div>
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" onkeypress="return onlyAlphabets(event,this);" placeholder="Enter Name " required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address: </label>
+                <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number: </label>
+                <input type="tel" id="number" name="number" placeholder="Enter 10 digit Phone Number" placeholder="Enter 10 digit Phone Number" maxlength="10" pattern="[1-9][0-9]{9}" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address : </label>
+                <input type="text" placeholder="Enter Address" required>
+                <input type="number" placeholder="Enter PinCode">
+                <input type="text"placeholder="Enter City">
+            </div>
+            <div class="form-group">
+                <label for="complaint-detail">Complaint Detail : </label>
+                <textarea name="complaint-detail" id="complaint-detail" rows="4" placeholder="Enter Detail "></textarea>
+            </div>
+            <div class="buttons">
+                <button onclick="myFunction1()" class="complaint-btn">Back</button>
+                <button type="submit" class="complaint-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+
+
+    function myFunction1() {
+        window.location.href = "detail.html";
+    }
+
+    let complaintForm = document.getElementById("complaintform");
+
+    complaintForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+        let date_of_complaint = document.getElementById("date-of-complaint");
+        let username = document.getElementById("name");
+        let e_mail = document.getElementById("email");
+        let complaint_detail = document.getElementById("complaint-detail");
+        let contact_number = document.getElementById("number");
+
+        if (date_of_complaint.value == "" || username.value == "" || e_mail.value == "" || complaint_detail.value == "" || contact_number.value == "") {
+            alert("Ensure you input a value in each fields first!");
+        } else {
+            // perform operation with form input
+            alert("This form has been successfully submitted!");
+            console.log(
+                `The Detail of this Complaint form : Date-Of-Complaint - ${date_of_complaint.value} , Username - ${username.value} , E-Mail - ${e_mail.value} , Complaint_Detail : ${complaint_detail.value} , Contact_Number : ${contact_number.value}`
+            );
+
+            date_of_complaint.value ="";
+            username.value = "";
+            e_mail.value = "";
+            complaint_detail.value ="";
+            contact_number.value="";
+        }
+    });
+
+
+
+    function onlyAlphabets(e, t) {
+            try {
+                if (window.event) {
+                    var charCode = window.event.keyCode;
+                }
+                else if (e) {
+                    var charCode = e.which;
+                }
+                else{ 
+                    return true; 
+                }
+                if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || charCode == 32)
+                    return true;
+                else
+                    return false;
+            }
+            catch (err) {
+                alert(err.Description);
+            }
+        }
+</script>
+</html>

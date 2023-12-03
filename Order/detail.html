@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food-Detail</title>
+    <style>
+        .card-content{
+            border: 0.1px solid black;
+            height: 680px;
+            width: 640px;
+            margin: auto;
+            background: url("./orderImages/food-detail-bg2.jpg");
+        }
+        .card{
+            margin: auto;
+            height: 560px;
+            width: 500px;
+            box-shadow: 1px 2px 20px 20px;
+            margin-top: 10px;
+            background: white;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(25px);
+        }
+        img{
+            height: 200px;
+            width: 50%;
+            padding: 20px 25% 2px 25%;
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        .payment-info-left{
+            display: inline-block;
+            margin-left: 50px;
+        }
+        .payment-info-right{
+            display: inline-block;
+            margin-left: 80px;
+        }
+        .buttons{
+            padding: 10px 10px 10px 50px;
+        }
+        .detail-btn{
+            padding: 7px;
+            border-radius: 10px;
+            margin: 0px 10px;
+            cursor: pointer;
+            background-color: gray;
+            font-size: 15px;
+            width: 100px;
+        }
+        .detail-btn:hover{
+            background-color: white;
+            box-shadow: 2px 2px 4px 4px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-content">
+        <div class="card">
+            <img src="../food-item-pages/foodItemImages/north4.webp" alt="Food-item">
+            <h3>Apna Restaurant</h3>
+            <p>
+                Items : <br>
+                Chhole Bhature . 
+            </p>
+            <div class="payment-info">
+                <div class="payment-info-left">
+                    <p>
+                        Quantity : 1 plate <br>
+                        Order Date : 25th-Nov-2023 <br>
+                        Order Status : Delivered 
+                    </p>
+                </div>
+                <div class="payment-info-right">
+                    <p>
+                        Amount : Rs. 200 <br>
+                        GST : 18% . 
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <p style="margin-left: 200px;">
+                Total Amount Paid : Rs. 236
+            </p>
+            <hr>
+            <div class="buttons">
+                <button class="detail-btn" onclick="myFunction3()">Back</button>
+                <button onclick="myFunction1()" class="detail-btn">Feedback</button>
+                <button onclick="myFunction2()" class="detail-btn">Complaint</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function myFunction1() {
+        window.location.href = "feedback.html";
+    }
+    function myFunction2() {
+        window.location.href = "complaint.html";
+    }
+    function myFunction3() {
+        window.location.href = "order.html";
+    }
+</script>
+</html>
